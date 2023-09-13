@@ -1,0 +1,9 @@
+Saw_Slash 3 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 Slashes_at_target_with_his_weapon.
+Coaching 0 0 0 0 0 0 3 0 0 0 0 0 0 3 0 0 0 0 100 0 0 0 0 1 0 0 0 0 Coaches_his_ally_into_being_a_better_fighter._Applies_"Charged"_status_effect_to_target.
+Enhance_Speed 0 0 0 0 0 0 5 0 0 0 0 0 0 4 0 0 0 0 100 0 0 0 0 1 0 0 0 0 Manipulates_the_winds_to_make_selected_target_move_faster_than_usual._Applies_"Evasive"_status_effect.
+Wind_Blast 5 0 0 0 0 0 4 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 Shoots_a_big_gust_of_wind_towards_selected_target.
+Suppression 0 0 0 0 0 0 9 0 0 0 0 0 0 17 0 0 0 0 70 0 0 0 0 0 0 0 0 0 Puts_wind_pressure_on_top_of_selected_target._70%_chance_to_apply_"Suppressed"_status_effect.
+Wind_Barrier 0 0 0 0 0 0 7 0 0 0 0 0 1 14 0 0 0 0 100 0 0 0 0 1 0 0 0 0 Places_a_wind_barrier_infront_of_him_and_his_ally._Applies_"Bulwark".
+Air_Ball 6 0 0 0 0 0 5 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 Charges_a_condensed_sphere_of_air_before_unleashing_it_onto_their_target
+Air_Spike_Barrage 11 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 Creates_needles_of_wind_around_his_target._He_then_unleashes_the_wind_needles_to_impale_them_at_the_same_time.
+Vortex_Lift 8 0 0 0 0 0 0 0 1 0 0 1 2 13 0 0 0 0 100 0 0 0 0 1 0 0 0 0 Pro_charges_up_wind_to_launch_himself_up_into_the_air_applying_"Airborne"_status_effect._Pro_then_comes_spiraling_down_onto_all_opponents,_dealing_damage.

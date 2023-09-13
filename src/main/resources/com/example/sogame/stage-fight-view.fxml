@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" stylesheets="@Styles/Letters.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sogame.StageFightController">
+   <children>
+      <ImageView fitHeight="900.0" fitWidth="1600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@stages/Stage.jpg" />
+         </image>
+      </ImageView>
+      <HBox alignment="CENTER" layoutX="156.0" layoutY="464.0" prefHeight="300.0" prefWidth="375.0">
+         <children>
+            <ImageView fx:id="char1" disable="true" fitHeight="274.0" fitWidth="255.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@charmodels/jomedy.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="char2" disable="true" fitHeight="274.0" fitWidth="255.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@charmodels/pro.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="939.0" layoutY="464.0" prefHeight="300.0" prefWidth="375.0" scaleX="-1.0">
+         <children>
+            <ImageView fx:id="char4" disable="true" fitHeight="274.0" fitWidth="255.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@charmodels/dyspo.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="char3" disable="true" fitHeight="274.0" fitWidth="255.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@charmodels/alex.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_CENTER" prefHeight="110.0" prefWidth="1600.0" spacing="50.0">
+         <children>
+            <Pane prefHeight="106.0" prefWidth="350.0" stylesheets="@Styles/Letters.css">
+               <children>
+                  <ImageView fx:id="char1UI" fitHeight="106.0" fitWidth="350.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@FighterUI/Fighter_Jomedy_UI.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="char1HP" layoutX="60.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SMBFontNum" text="40/40">
+                     <font>
+                        <Font size="38.0" />
+                     </font></Text>
+                  <Text fx:id="char1SP" layoutX="137.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SMBFontNum" text="40/40">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="char1Ult" layoutX="260.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SMBFontNum" text="40/40">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="10.0" layoutY="10.0" prefHeight="106.0" prefWidth="350.0" stylesheets="@Styles/Letters.css">
+               <children>
+                  <ImageView fx:id="char2UI" fitHeight="106.0" fitWidth="350.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@FighterUI/Fighter_Jomedy_UI.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="char2HP" layoutX="60.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SMBFontNum" text="40/40">
+                     <font>
+                        <Font size="38.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="char2SP" layoutX="137.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SMBFontNum" text="40/40">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="char2Ult" layoutX="260.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SMBFontNum" text="40/40">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="360.0" layoutY="10.0" prefHeight="106.0" prefWidth="350.0" stylesheets="@Styles/Letters.css">
+               <children>
+                  <ImageView fx:id="char3UI" fitHeight="106.0" fitWidth="350.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@FighterUI/Fighter_Jomedy_UI.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="char3HP" layoutX="60.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SMBFontNum" text="40/40">
+                     <font>
+                        <Font size="38.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="char3SP" layoutX="137.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SMBFontNum" text="40/40">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="char3Ult" layoutX="260.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SMBFontNum" text="40/40">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="710.0" layoutY="10.0" prefHeight="106.0" prefWidth="350.0" stylesheets="@Styles/Letters.css">
+               <children>
+                  <ImageView fx:id="char4UI" fitHeight="106.0" fitWidth="350.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@FighterUI/Fighter_Jomedy_UI.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="char4HP" layoutX="60.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SMBFontNum" text="40/40">
+                     <font>
+                        <Font size="38.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="char4SP" layoutX="137.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SMBFontNum" text="40/40">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="char4Ult" layoutX="260.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SMBFontNum" text="40/40">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </children>
+         <padding>
+            <Insets left="15.0" right="15.0" />
+         </padding>
+      </HBox>
+      <HBox fx:id="mainUIMenu" alignment="CENTER" layoutY="767.0" prefHeight="133.0" prefWidth="1600.0" spacing="15.0">
+         <children>
+            <Pane fx:id="mainUIItems" prefHeight="118.0" prefWidth="373.0">
+               <children>
+                  <ImageView fitHeight="118.0" fitWidth="373.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@StageUI/Battle-UI.png" />
+                     </image></ImageView>
+                  <Text fill="#f8f8f8" layoutX="99.0" layoutY="92.0" strokeType="OUTSIDE" styleClass="SMBFontLetters" text="ITEMS">
+                     <font>
+                        <Font size="64.0" />
+                     </font></Text>
+               </children>
+            </Pane>
+            <Pane fx:id="mainUIAttack" layoutX="10.0" layoutY="10.0" prefHeight="118.0" prefWidth="373.0">
+               <children>
+                  <ImageView fitHeight="118.0" fitWidth="373.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@StageUI/Battle-UI.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#f8f8f8" layoutX="67.0" layoutY="92.0" strokeType="OUTSIDE" styleClass="SMBFontLetters" text="ATTACK">
+                     <font>
+                        <Font size="64.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane fx:id="mainUITactics" layoutX="383.0" layoutY="10.0" prefHeight="118.0" prefWidth="373.0">
+               <children>
+                  <ImageView fitHeight="118.0" fitWidth="373.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@StageUI/Battle-UI.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#f8f8f8" layoutX="67.0" layoutY="92.0" strokeType="OUTSIDE" styleClass="SMBFontLetters" text="TACTICS">
+                     <font>
+                        <Font size="64.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </children></HBox>
+      <Pane fx:id="descriptionUIPane" layoutX="226.0" layoutY="767.0" prefHeight="133.0" prefWidth="1149.0" visible="false">
+         <children>
+            <ImageView fitHeight="118.0" fitWidth="1149.0" layoutX="4.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@StageUI/Battle-UI-Description.png" />
+               </image>
+            </ImageView>
+            <VBox alignment="CENTER_LEFT" layoutX="81.0" layoutY="22.0" prefHeight="91.0" prefWidth="988.0">
+               <children>
+                  <Text fx:id="descriptionUIText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="descriptionFont" text="text" wrappingWidth="987.5000038146973">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <Pane fx:id="turnNamePane" layoutX="672.0" layoutY="165.0" prefHeight="81.0" prefWidth="256.0">
+         <children>
+            <ImageView fitHeight="81.0" fitWidth="256.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@StageUI/Battle-UI.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="turnNameText" layoutX="9.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SMBFontTitle" text="Player" textAlignment="CENTER" wrappingWidth="237.86666870117188">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane fx:id="attackUIPane" layoutX="610.0" layoutY="267.0" prefHeight="490.0" prefWidth="381.0" visible="false">
+         <children>
+            <ImageView fitHeight="490.0" fitWidth="381.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@StageUI/Battle-Selection-UI.png" />
+               </image>
+            </ImageView>
+            <VBox alignment="CENTER" layoutX="13.0" layoutY="30.0" prefHeight="444.0" prefWidth="350.0">
+               <children>
+                  <HBox fx:id="attackUIBasic" alignment="CENTER" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SMBFontLetters" text="BASIC">
+                           <font>
+                              <Font size="60.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="attackUIAbilities" alignment="CENTER" layoutX="10.0" layoutY="10.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SMBFontLetters" text="ABILITIES">
+                           <font>
+                              <Font size="60.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="attackUIUltimates" alignment="CENTER" layoutX="10.0" layoutY="367.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Text fill="#757272" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SMBFontLetters" text="ULTIMATES">
+                           <font>
+                              <Font size="60.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Circle fx:id="attackUIExit" fill="WHITE" layoutX="338.0" layoutY="39.0" opacity="0.0" radius="29.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="generalMovesUIPane" layoutX="610.0" layoutY="267.0" prefHeight="490.0" prefWidth="381.0" visible="false">
+         <children>
+            <ImageView fitHeight="490.0" fitWidth="381.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@StageUI/Battle-Selection-UI.png" />
+               </image>
+            </ImageView>
+            <VBox fx:id="generalMovesUIVbox" alignment="TOP_CENTER" layoutX="21.0" layoutY="87.0" maxWidth="336.0" prefHeight="351.0" prefWidth="336.0" spacing="10.0" />
+            <Circle fx:id="generalMovesUIExit" fill="WHITE" layoutX="338.0" layoutY="39.0" opacity="0.0" radius="29.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Text fx:id="generalMovesUITitle" layoutX="82.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="descriptionFont" text="TITLE" textAlignment="CENTER" wrappingWidth="213.46666717529297">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane fx:id="char1NamePane" layoutX="202.0" layoutY="395.0" prefHeight="55.0" prefWidth="175.0" visible="false">
+         <children>
+            <ImageView fitHeight="55.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@StageUI/Battle-UI.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="char1Name" layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SMBFontLetters" text="Name" textAlignment="CENTER" wrappingWidth="133.13671875">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane fx:id="char2NamePane" layoutX="456.0" layoutY="395.0" prefHeight="55.0" prefWidth="175.0" visible="false">
+         <children>
+            <ImageView fitHeight="55.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@StageUI/Battle-UI.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="char2Name" layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SMBFontLetters" text="Name" textAlignment="CENTER" wrappingWidth="133.13671875">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane fx:id="char3NamePane" layoutX="968.0" layoutY="395.0" prefHeight="55.0" prefWidth="175.0" visible="false">
+         <children>
+            <ImageView fitHeight="55.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@StageUI/Battle-UI.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="char3Name" layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SMBFontLetters" text="Name" textAlignment="CENTER" wrappingWidth="133.13671875">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane fx:id="char4NamePane" layoutX="1219.0" layoutY="395.0" prefHeight="55.0" prefWidth="175.0" visible="false">
+         <children>
+            <ImageView fitHeight="55.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@StageUI/Battle-UI.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="char4Name" layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SMBFontLetters" text="Name" textAlignment="CENTER" wrappingWidth="133.13671875">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <ImageView fx:id="selectionUIExit" fitHeight="65.0" fitWidth="71.0" layoutX="765.0" layoutY="692.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@StageUI/X-Icon.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

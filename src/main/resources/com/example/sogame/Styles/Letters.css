@@ -1,0 +1,38 @@
+/* styles.css */
+@font-face {
+    src: url('Fonts/SuperMarioScript2Demo-Regular.ttf');
+}
+
+.SMBFontNum {
+    -fx-font-family: 'Super [Mario] Script 2 Demo';
+    -fx-fill: #191919; /* Set the font color */
+}
+
+.SMBFontLetters {
+    -fx-font-family: 'Super [Mario] Script 2 Demo';
+    -fx-fill: #f6f6f6; /* Set the font color */
+    -fx-stroke: black; /* Set the outline color */
+    -fx-stroke-width: 1.5; /* Adjust the outline width as needed */
+}
+
+.SMBFontLocked {
+    -fx-font-family: 'Super [Mario] Script 2 Demo';
+    -fx-fill: #757272; /* Set the font color */
+    -fx-stroke: black; /* Set the outline color */
+    -fx-stroke-width: 1.5; /* Adjust the outline width as needed */
+}
+
+.SMBFontTitle{
+    -fx-font-family: 'Super [Mario] Script 2 Demo';
+    -fx-fill: #D70799; /* Set the font color */
+    -fx-stroke: black; /* Set the outline color */
+    -fx-stroke-width: 1.5; /* Adjust the outline width as needed */
+}
+
+
+.descriptionFont{
+    -fx-font-family: 'Super [Mario] Script 2 Demo';
+    -fx-fill: #D70799; /* Set the font color */
+    /*-fx-stroke: black; /* Set the outline color */
+    /*-fx-stroke-width: 1.5; /* Adjust the outline width as needed */
+}

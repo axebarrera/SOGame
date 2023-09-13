@@ -1,0 +1,9 @@
+Tornado_Kick 2 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 Does_the_monke_and_360_kicks_the_target.
+Ready,_Buster? 0 0 0 0 0 0 3 0 0 0 0 0 0 3 0 0 0 0 100 0 0 0 0 1 0 0 0 0 Charges_energy_inside_his_arsenal_to_empower_his_next_attack._Applies_"Charged"_status_effect.
+Rage 0 0 0 0 0 0 5 0 0 0 0 0 0 2 0 0 0 0 100 0 0 0 0 1 0 0 0 0 Becomes_enraged_and_pretends_to_be_the_DOOM_guy._Applies_"Attack_Boost"_status_effect.
+Energy_Dash 4 0 0 0 0 0 3 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 Uses_an_energy_blast_to_propel_himself_forward_in_order_to_land_a_strike.
+Energy_Blast 6 0 0 0 0 0 5 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 Uses_his_arsenal_to_shoot_an_energy_beam.
+Bomb_Squad 2 2 0 0 0 0 8 0 2 1 0 0 0 9 0 0 0 0 70 0 0 0 0 0 0 0 0 0 Throws_two_energy_mines(2)_that_explode_on_impact._70%_chance_to_apply_"Confused"_status_effect.
+Belittle 0 0 0 0 0 0 8 0 0 0 0 0 0 31 0 0 0 0 70 0 0 0 0 0 0 0 0 0 Calls_their_target_a_loser_bitch_retard,_causing_them_to_get_angry_at_him._70%_chance_to_apply_"Taunted"_status.
+Surge 9 0 0 0 0 0 0 0 1 1 0 1 0 0 0 0 0 0 100 0 0 0 0 1 0 0 0 0 The_gem's_aura_takes_over_and_wakes_his_subconscious_mind._Ritalin,_now_with_an_intense_strenght_boost,_slams_their_opponent_onto_the_ground._Applies_"Strenght_Boost"_status_effect_after_the_move.
+Final_Bang 12 0 0 0 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0  0 0 0 0 Charges_forward_with_insane_speed_and_upon_landing_on_target,_causing_a_blue_explosion_of_energy,_trapping_the_enemy_inside_it,_followed_up_by_a_deadly_explosion.
