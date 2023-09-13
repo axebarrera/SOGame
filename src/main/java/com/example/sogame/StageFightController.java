@@ -488,4 +488,6 @@ public class StageFightController implements SceneSwitcher{
     public void setTurnName(){
         turnNameText.setText(fighters[turnOrder[currTurn]].name);
     }
+
+    /** END UPDATE UI VALUES */
 }
