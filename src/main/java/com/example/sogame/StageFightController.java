@@ -118,9 +118,9 @@ public class StageFightController implements SceneSwitcher{
 
     public void attackUIInit(){
         attackUIExit.setOnMouseClicked(event->exitAttackMenu());
-        attackUIBasic.setOnMouseClicked(event->enterBasicMenu());
-        attackUIAbilities.setOnMouseClicked(event->enterAbilitiesMenu());
-        attackUIUltimates.setOnMouseClicked(event->enterUltimatesMenu());
+        attackUIBasic.setOnMouseClicked(event->enterGeneralMenu("BASIC",BEGINBASIC,ENDBASIC));
+        attackUIAbilities.setOnMouseClicked(event->enterGeneralMenu("ABILITIES",BEGINABILITIES,ENDABILITIES));
+        attackUIUltimates.setOnMouseClicked(event->enterGeneralMenu("ULTIMATES",BEGINULTIMATES,ENDULTIMATES));
         generalMovesUIExit.setOnMouseClicked(event->exitGeneralMenu());
     }
 
@@ -159,11 +159,11 @@ public class StageFightController implements SceneSwitcher{
         attackUIPane.setVisible(false);
     }
 
-    public void enterBasicMenu(){
-
+    //Basic, Abilities, and Ultimates Menus should call this function with appropriate parameters
+    public void enterGeneralMenu(String title, int beginning, int end){
         Fighter f = fighters[turnOrder[currTurn]];
-        generalMovesUITitle.setText("BASIC");
-        generateListOfMoves(generalMovesUIVbox,f.attacks,BEGINBASIC,ENDBASIC);
+        generalMovesUITitle.setText(title);
+        generateListOfMoves(generalMovesUIVbox,f.attacks,beginning,end);
         attackUIPane.setVisible(false);
         generalMovesUIPane.setVisible(true);
         mainUIMenu.setVisible(false);
@@ -181,25 +181,6 @@ public class StageFightController implements SceneSwitcher{
         descriptionUIPane.setVisible(false);
     }
 
-    public void enterAbilitiesMenu(){
-        Fighter f = fighters[turnOrder[currTurn]];
-        generalMovesUITitle.setText("ABILITIES");
-        generateListOfMoves(generalMovesUIVbox,f.attacks,BEGINABILITIES,ENDABILITIES);
-        attackUIPane.setVisible(false);
-        generalMovesUIPane.setVisible(true);
-        mainUIMenu.setVisible(false);
-        descriptionUIPane.setVisible(true);
-    }
-    public void enterUltimatesMenu(){
-        Fighter f = fighters[turnOrder[currTurn]];
-        generalMovesUITitle.setText("ULTIMATES");
-        generateListOfMoves(generalMovesUIVbox,f.attacks,BEGINULTIMATES,ENDULTIMATES);
-        attackUIPane.setVisible(false);
-        generalMovesUIPane.setVisible(true);
-        mainUIMenu.setVisible(false);
-        descriptionUIPane.setVisible(true);
-    }
-
     public void chooseMove(int id){
         //TODO: Add an else to if statement
         //TODO: The else serves as an error mechanism (Taunted, not enough sp, not enough ultimate points)
@@ -215,12 +196,25 @@ public class StageFightController implements SceneSwitcher{
     }
 
     public void cancelMove(){
+        disableCharacters();
+        generalMovesUIPane.setVisible(true);
+        selectionUIExit.setVisible(false);
+    }
+
+    public void disableCharacters(){
         char1.setDisable(true);
         char2.setDisable(true);
         char3.setDisable(true);
         char4.setDisable(true);
-        generalMovesUIPane.setVisible(true);
+    }
+
+    public void resetGUIAfterMove(){
+        //Characters should be disabled by this point
+        //Removes X to back out
         selectionUIExit.setVisible(false);
+        descriptionUIPane.setVisible(false);
+        mainUIMenu.setVisible(true);
+
     }
 
     public void setDescriptionText(String content){
@@ -232,6 +226,11 @@ public class StageFightController implements SceneSwitcher{
     /** GAME MECHANICS START */
 
     public void executeTurn(Fighter target){
+        //Disable Characters to ensure no repeats are encountered
+        disableCharacters();
+        //Removes x to prevent unwanted interactions
+        selectionUIExit.setVisible(false);
+
         //Get Basic Objects
         Fighter caster = fighters[turnOrder[currTurn]];
         Moves move = caster.attacks.get(lastMoveID);
@@ -302,10 +301,12 @@ public class StageFightController implements SceneSwitcher{
         //Run Beginning Effects
         nextF.executeStatusEffects(EffectSection.BEGINNING);
 
-        //TODO: UPDATE GUI TO SHOW NEXT TURNS MAIN MENU
-        //TODO: ADD LOGS OUTPUT
         //Update UI Values
         updateUIStats();
+        //Resets GUI to beginning of turn
+        resetGUIAfterMove();
+        //TODO: ADD LOGS OUTPUT
+
 
     }
 
@@ -394,6 +395,8 @@ public class StageFightController implements SceneSwitcher{
 
             //Create Event Listener
             final int id = i;
+
+            //Creates Events for clicking the move to execute and hovering allows for description to be displayed
             EventHandler<MouseEvent> eventHandler = event -> chooseMove(id);
             EventHandler<MouseEvent> hoverHandler = event -> setDescriptionText(move.description);
             container.setOnMouseClicked(eventHandler);
