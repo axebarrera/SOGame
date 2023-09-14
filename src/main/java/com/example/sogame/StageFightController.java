@@ -182,9 +182,9 @@ public class StageFightController implements SceneSwitcher{
     }
 
     public void chooseMove(int id){
-        //TODO: Add an else to if statement
-        //TODO: The else serves as an error mechanism (Taunted, not enough sp, not enough ultimate points)
-        if(true) {
+
+        Fighter f  = fighters[turnOrder[currTurn]];
+        if(f.verifyChosenMove(id)) {
             if (!fighters[0].untargetable) char1.setDisable(false);
             if (!fighters[1].untargetable) char2.setDisable(false);
             if (!fighters[2].untargetable) char3.setDisable(false);
@@ -192,6 +192,9 @@ public class StageFightController implements SceneSwitcher{
             generalMovesUIPane.setVisible(false);
             selectionUIExit.setVisible(true);
             lastMoveID = id;
+        }else{
+            //Add Error Textbox
+            f.invalidMoveErrorMessage(id);
         }
     }
 

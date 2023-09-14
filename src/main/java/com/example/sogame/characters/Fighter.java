@@ -20,7 +20,6 @@ public class Fighter {
     public int hp; //current hp of fighter
     public int maxsp; //Max SP of fighter, sp cant go over this value
     public int sp; //current sp of fighter
-    public int spModifier; //TODO: Implement SP Modifier for characters (Display, errors, and resources drained)
     public int defense; //base defense of fighter
     public int modDefense; //defense increase/decrease value held here
     public int ultPoints; //current ult points
@@ -43,6 +42,7 @@ public class Fighter {
     public boolean mangled;
     public boolean sanctified;
     public boolean undying;
+    public boolean taunted;
     public String charModel;
     public String charUI;
 
@@ -82,7 +82,7 @@ public class Fighter {
         invulnerable = false;
         bulwark = false;
         untargetable = false;
-        spModifier = 0;
+        taunted = false;
     }
 
     public String getModel(){return charModel;}
@@ -207,7 +207,7 @@ public class Fighter {
             }
         }else{
             sp+=val;
-            if(sp<0)sp=0;
+            if(sp<0) System.out.println("ERROR: SP SHOULD NEVER BE NEGATIVE");
         }
     }
 
@@ -242,6 +242,49 @@ public class Fighter {
         for(int i=0;i<effects.size();i++){
             if(effects.get(i).isSameEffect(id)) effects.remove(i);
         }
+    }
+
+    public boolean ultimateAvailable() {
+        return ultPoints==ultLim;
+    }
+
+
+    public boolean verifyChosenMove(int moveID){
+        Moves m = attacks.get(moveID);
+
+        //Check if fighter is taunted and if move contains status effects
+        if(taunted && !m.effects.isEmpty()) return false;
+
+        //Verify SP
+        if(sp < m.resource[1]) return false;
+
+        //Verify Health
+        if(hp < m.resource[0])return false;
+
+        //Verify Ultimate
+        if(m.isUlt && !ultimateAvailable()) return false;
+
+        return true;
+    }
+
+    public String invalidMoveErrorMessage(int moveID){
+        Moves m = attacks.get(moveID);
+
+        //Check if fighter is taunted and if move contains status effects
+        if(taunted && !m.effects.isEmpty()) return "Character is Taunted";
+
+        String template = "Not Enough ";
+
+        //Verify SP
+        if(sp < m.resource[1]) return template + "SP";
+
+        //Verify Health
+        if(hp < m.resource[0]) return template + "HP";
+
+        //Verify Ultimate
+        if(m.isUlt && !ultimateAvailable()) return template + "Ultimate Points";
+
+        return "ERROR: invalidMoveErrorMessage and verifyChosenMove differ outputs";
     }
 
     @Override
