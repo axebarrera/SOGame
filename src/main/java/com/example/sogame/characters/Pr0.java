@@ -10,6 +10,6 @@ public class Pr0 extends Fighter {
                 "FighterUI/Fighter_Pro_UI.png",
                 "charmodels/pro.png");
         attacks = new ArrayList<>();
-        attacks = generateMoves("pr0Moves.txt");
+        attacks = generateMoves("MoveFiles/pr0Moves.txt");
     }
 }

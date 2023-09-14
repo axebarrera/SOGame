@@ -11,6 +11,6 @@ public class Dyspo extends Fighter {
                 "FighterUI/Fighter_Dyspo_UI.png",
                 "charmodels/dyspo.png");
         attacks = new ArrayList<>();
-        attacks = generateMoves("dyspoMoves.txt");
+        attacks = generateMoves("MoveFiles/dyspoMoves.txt");
     }
 }

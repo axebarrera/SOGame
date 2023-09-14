@@ -9,7 +9,7 @@ public class Jomedy extends Fighter {
                 "FighterUI/Fighter_Jomedy_UI.png",
                 "charmodels/jomedy.png");
         attacks = new ArrayList<>();
-        attacks = generateMoves("jomedyMoves.txt");
+        attacks = generateMoves("MoveFiles/jomedyMoves.txt");
     }
 
 }

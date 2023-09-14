@@ -10,6 +10,6 @@ public class Ritalin extends Fighter {
                 "FighterUI/Fighter_Ritalin_UI.png",
                 "charmodels/alex.png");
         attacks = new ArrayList<>();
-        attacks = generateMoves("ritalinMoves.txt");
+        attacks = generateMoves("MoveFiles/ritalinMoves.txt");
     }
 }
