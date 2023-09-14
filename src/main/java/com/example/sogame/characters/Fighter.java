@@ -53,6 +53,8 @@ public class Fighter {
 
     StageFightController sfc;
 
+    //TODO: Update Fighter Moves Text Files
+
     public Fighter(String name,int hp, int sp, int defense, int special, String charUI, String charModel) {
         this.name = name;
         this.hp = hp;
@@ -195,7 +197,7 @@ public class Fighter {
                 if(asleep && val<0)asleep = false;
                 hp += val;
                 modifyUlt(-val);
-                if (hp < 0) hp = 0;
+                if (hp < 0) hp = setDead();
             }
         }
         return initialHP-hp;
@@ -250,6 +252,11 @@ public class Fighter {
         return ultPoints==ultLim;
     }
 
+    public int setDead(){
+        isDead = true;
+        untargetable = true;
+        return 0;
+    }
 
     public boolean verifyChosenMove(int moveID){
         Moves m = attacks.get(moveID);

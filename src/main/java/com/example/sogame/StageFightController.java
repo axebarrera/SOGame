@@ -193,8 +193,8 @@ public class StageFightController implements SceneSwitcher{
             selectionUIExit.setVisible(true);
             lastMoveID = id;
         }else{
-            //Add Error Textbox
-            f.invalidMoveErrorMessage(id);
+            //Add Error Textbox, print statement is temporary
+            System.out.println(f.invalidMoveErrorMessage(id));
         }
     }
 
@@ -217,6 +217,9 @@ public class StageFightController implements SceneSwitcher{
         selectionUIExit.setVisible(false);
         descriptionUIPane.setVisible(false);
         mainUIMenu.setVisible(true);
+        clearMouseEvents();
+        generalMovesUIVbox.getChildren().clear();
+        setTurnName();
 
     }
 
@@ -242,6 +245,7 @@ public class StageFightController implements SceneSwitcher{
         caster.sp -= move.resource[1];
         caster.special -= move.resource[2];
         caster.modifyUlt(move.resource[0]);
+        if(move.isUlt) caster.ultPoints = 0;
         //Add Targets to List
         addTargetsToList(target,caster,move);
         //Generate and calculate self affecting status effects only
@@ -325,6 +329,7 @@ public class StageFightController implements SceneSwitcher{
     }
 
     public void addTargetsToList(Fighter target,Fighter caster,Moves move){
+        lastMoveTargets.clear();
 
         TargetType mode = move.mode;
         if(mode == TargetType.INDIVIDUAL){
