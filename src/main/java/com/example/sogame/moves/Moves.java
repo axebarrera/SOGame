@@ -41,6 +41,14 @@ public class Moves {
         this.description = description;
     }
 
+    public boolean usesResources(){
+        if(isUlt) return false;
+        for(int i=0;i<resource.length;i++){
+            if(resource[i]!=0)return false;
+        }
+        return true;
+    }
+
     @Override
     public String toString() {
         return name+"{" +

@@ -43,6 +43,7 @@ public class Fighter {
     public boolean sanctified;
     public boolean undying;
     public boolean taunted;
+    public boolean silenced;
     public String charModel;
     public String charUI;
 
@@ -83,6 +84,7 @@ public class Fighter {
         bulwark = false;
         untargetable = false;
         taunted = false;
+        silenced = false;
     }
 
     public String getModel(){return charModel;}
@@ -252,6 +254,9 @@ public class Fighter {
     public boolean verifyChosenMove(int moveID){
         Moves m = attacks.get(moveID);
 
+        //Check if target is silenced
+        if(silenced && m.usesResources()) return false;
+
         //Check if fighter is taunted and if move contains status effects
         if(taunted && !m.effects.isEmpty()) return false;
 
@@ -270,8 +275,11 @@ public class Fighter {
     public String invalidMoveErrorMessage(int moveID){
         Moves m = attacks.get(moveID);
 
+        //Silenced
+        if(silenced && m.usesResources()) return name + " is Silenced";
+
         //Check if fighter is taunted and if move contains status effects
-        if(taunted && !m.effects.isEmpty()) return "Character is Taunted";
+        if(taunted && !m.effects.isEmpty()) return  name + " is Taunted";
 
         String template = "Not Enough ";
 
@@ -279,7 +287,7 @@ public class Fighter {
         if(sp < m.resource[1]) return template + "SP";
 
         //Verify Health
-        if(hp < m.resource[0]) return template + "HP";
+//        if(hp < m.resource[0]) return template + "HP";
 
         //Verify Ultimate
         if(m.isUlt && !ultimateAvailable()) return template + "Ultimate Points";
