@@ -216,7 +216,8 @@ public class Fighter {
     }
 
     public void modifyUlt(int val){
-        if(!isInStasis) {
+
+        if(!isInStasis && !isDead) {
             ultPoints += val;
             if (ultPoints > ultLim) ultPoints = ultLim;
         }

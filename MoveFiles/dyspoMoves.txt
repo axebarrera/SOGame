@@ -4,6 +4,6 @@ Infusion 0 0 0 0 0 0 3 0 0 0 0 0 0 3 0 0 0 0 100 0 0 0 0 1 0 0 0 0 Charges_his_s
 Double_Flash 2 3 0 0 0 0 9 0 2 1 2 0 0 34 0 0 0 0 100 0 0 0 0 1 0 0 0 0 Flashes_through_an_opponent(2)_and_flashes_through_them_again_on_the_way_back(3)._Pierces_defense.
 Lightning_Sphere 4 0 0 0 0 0 6 0 1 1 2 0 0 11 0 0 0 0 70 0 0 0 0 0 0 0 0 0 Shoots_a_lightning_sphere_towards_their_target._70%_chance_to_apply_"Paralyzed"_status_effect.
 Thunderclap_Slash 1 4 0 0 0 0 6 0 2 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 Strikes_the_torso(1)_then_charges_lightning_to_cut_through_their_body,_causing_a_thunderclap(4).
-Lightning_Surge_Blast 9 0 0 0 0 0 10 0 1 1 2 0 2 15 0 0 0 0 100 0 0 0 0 1 0 0 0 0 Charges_sword_with_lightning_applying_"Defer"_status_effect._Dyspo_then_shoots_the_lightning_towards_all_opponents.
+Lightning_Surge_Blast 9 0 0 0 0 0 10 0 1 1 2 0 1 15 0 0 0 0 100 0 0 0 0 1 0 0 0 0 Charges_sword_with_lightning_applying_"Defer"_status_effect._Dyspo_then_shoots_the_lightning_towards_all_opponents.
 Lightning_Burst 8 0 0 0 0 0 0 0 1 1 2 1 2 11 0 0 0 0 70 0 0 0 0 0 0 0 0 0 Super_charges_a_big_lightning_sphere_before_unleashing_it_onto_all_his_opponents._70%_chance_to_apply_"Paralyzed"_status_effect.
 Godspeed 12 0 0 0 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 Dyspo_summons_lightning_and_surrounds_his_body_with_it._Making_it_seem_as_if_he_stops_time,_he_then_unleashes_multiple_slashes_towards_his_target.

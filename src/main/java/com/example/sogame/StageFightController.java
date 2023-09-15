@@ -241,11 +241,12 @@ public class StageFightController implements SceneSwitcher{
         Fighter caster = fighters[turnOrder[currTurn]];
         Moves move = caster.attacks.get(lastMoveID);
         //Drain Resources from caster
+        caster.modifyUlt(move.resource[0]);
+        if(move.isUlt) caster.ultPoints = 0;
         caster.hp -= move.resource[0];
         caster.sp -= move.resource[1];
         caster.special -= move.resource[2];
-        caster.modifyUlt(move.resource[0]);
-        if(move.isUlt) caster.ultPoints = 0;
+
         //Add Targets to List
         addTargetsToList(target,caster,move);
         //Generate and calculate self affecting status effects only

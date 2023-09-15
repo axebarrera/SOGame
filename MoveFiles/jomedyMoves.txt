@@ -6,4 +6,4 @@ Scorching_Rush 2 2 2 0 0 0 8 0 3 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 Slashes_t
 Flame_Wall 5 0 0 0 0 0 7 0 1 1 1 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 Throws_projectile-like_wall_of_flames_to_all_enemies.
 Ascending_Sear 6 0 0 0 0 0 8 0 1 0 1 0 0 10 0 0 0 0 70 0 0 0 0 0 0 0 0 0 Jumps_to_the_sky_and_lands_on_target_with_an_intense_pillar_of_flames._70%_chance_to_apply_"Burned"_status_effect.
 Flaming_Strike 8 0 0 0 0 0 0 0 1 1 1 1 0 10 0 0 0 0 70 0 0 0 0 0 0 0 0 0 Jomedy_manifests_flame_around_his_fist,_he_then_charges_to_his_target_and_delivers_a_strong_blow_to_the_face._70%_chance_to_apply_"Burned"_status_effect.
-Solana 10 0 0 0 0 3 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 Jomedy_surrounds_himself_with_a_spinning_circle_of_flames,_then_calls_all_flames_to_circle_towards_him_then_unleashing_a_gigantic_explosion,_damaging_all_opponents._Deals_3_HP_of_self-damage.
+Solana 10 0 0 0 0 3 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 Jomedy_surrounds_himself_with_a_spinning_circle_of_flames,_then_calls_all_flames_to_circle_towards_him_then_unleashing_a_gigantic_explosion,_damaging_all_opponents._Deals_3_HP_of_self-damage.

@@ -28,13 +28,14 @@ public class HelloApplication extends Application {
         StageFightController controller = fxmlLoader.getController();
         controller.setApplication(this);
         //Decide Turn Order
-        //randomizeTurns(turnOrder);
+        randomizeTurns(turnOrder);
+        generateFighters();
         System.out.println(Arrays.toString(turnOrder));
         //Create Fighters, This is temporary for testing reasons
-        fighters[1] = new Jomedy();
-        fighters[3] = new Pr0();
-        fighters[2] = new Ritalin();
-        fighters[0] = new Dyspo();
+//        fighters[1] = new Jomedy();
+//        fighters[3] = new Pr0();
+//        fighters[2] = new Ritalin();
+//        fighters[0] = new Dyspo();
 
         //Set the Window
         Scene scene = new Scene(root, 1600, 900);
@@ -73,5 +74,12 @@ public class HelloApplication extends Application {
             array[i] = array[j];
             array[j] = temp;
         }
+    }
+
+    public void generateFighters(){
+        fighters[turnOrder[0]] = new Jomedy();
+        fighters[turnOrder[1]] = new Pr0();
+        fighters[turnOrder[2]] = new Ritalin();
+        fighters[turnOrder[3]] = new Dyspo();
     }
 }
