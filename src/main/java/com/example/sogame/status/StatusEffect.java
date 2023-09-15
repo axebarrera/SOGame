@@ -40,6 +40,10 @@ public class StatusEffect {
         return;
     }
 
+    public void enhanceEffect(int dmg,int turns,int chance,Fighter fighter) {
+        return;
+    }
+
     public boolean isSameEffect(int id){
         if(this.id == id) return true;
         return false;

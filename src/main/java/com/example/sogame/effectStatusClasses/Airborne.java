@@ -26,13 +26,14 @@ public class Airborne extends StatusEffect {
 
     @Override
     public void applyEffect(Fighter fighter) {
-        fighter.invulnerable = false;
-        fighter.untargetable = false;
-        fighter.disabled = false;
+        finalizeEffect(fighter);
     }
 
     @Override
     public void finalizeEffect(Fighter fighter) {
+        fighter.invulnerable = false;
+        fighter.untargetable = false;
+        fighter.disabled = false;
         fighter.deleteStatusEffect(this.id);
     }
 
