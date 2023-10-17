@@ -41,7 +41,7 @@ public class StatusEffect {
     }
 
     public void enhanceEffect(int dmg,int turns,int chance,Fighter fighter) {
-        return;
+        enhanceEffect(dmg, turns, chance);
     }
 
     public boolean isSameEffect(int id){

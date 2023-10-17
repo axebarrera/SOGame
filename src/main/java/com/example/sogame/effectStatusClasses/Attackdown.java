@@ -17,7 +17,8 @@ public class Attackdown extends StatusEffect {
             originalSection = section;
             section = EffectSection.STASIS;
         } else {
-
+            fighter.attackDamage -= 1;
+            totalReduction = 1;
         }
         
         return;
@@ -31,11 +32,20 @@ public class Attackdown extends StatusEffect {
 
     @Override
     public void finalizeEffect(Fighter fighter) {
-
+        fighter.attackDamage += totalReduction;
+        fighter.deleteStatusEffect(this.id);
     }
 
     @Override
     public void enhanceEffect(int dmg, int turns, int chance, Fighter fighter) {
+        /**
+         * Questions to ask:
+         * When expedited can number of turns exceed the base
+         * When applying a status effect again does it go back to base or added on
+         * does attackdown and other similar effects get affected by the first parameter
+         */
+        fighter.attackDamage -= dmg;
+        totalReduction += dmg;
 
     }
 }
