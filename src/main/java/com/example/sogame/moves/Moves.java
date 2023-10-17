@@ -49,6 +49,13 @@ public class Moves {
         return true;
     }
 
+    public boolean containsEffect(int id){
+        for(int i=0;i<effects.size();i++){
+            if(id == effects.get(i))return true;
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         return name+"{" +

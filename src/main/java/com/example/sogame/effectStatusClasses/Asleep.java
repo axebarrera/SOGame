@@ -33,6 +33,7 @@ public class Asleep extends StatusEffect {
 
     @Override
     public void enhanceEffect(int dmg, int turns, int chance) {
+        if(turns == 0) this.turns = this.turnLim;
         this.turns+=turns;
     }
 }

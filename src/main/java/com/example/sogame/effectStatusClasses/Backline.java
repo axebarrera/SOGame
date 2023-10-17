@@ -16,7 +16,7 @@ public class Backline extends StatusEffect {
             originalSection = section;
             section = EffectSection.STASIS;
         } else {
-            // TODO
+            fighter.bonusDodgeChance += 30;
         }
         
         return;
@@ -24,19 +24,16 @@ public class Backline extends StatusEffect {
 
     @Override
     public void applyEffect(Fighter fighter) {
-        // TODO
-        return;
+        //Repeated application does nothing
     }
 
     @Override
     public void finalizeEffect(Fighter fighter) {
-        // TODO
-        return;
+        fighter.bonusDodgeChance -= 30;
     }
 
     @Override
     public void enhanceEffect(int dmg, int turns, int chance) {
-        // TODO
-        return;
+        //Effect cannot be enhanced
     }
 }

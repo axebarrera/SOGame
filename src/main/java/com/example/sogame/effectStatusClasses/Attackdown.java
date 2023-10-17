@@ -20,8 +20,6 @@ public class Attackdown extends StatusEffect {
             fighter.attackDamage -= 1;
             totalReduction = 1;
         }
-        
-        return;
     }
 
     @Override
@@ -46,6 +44,8 @@ public class Attackdown extends StatusEffect {
          */
         fighter.attackDamage -= dmg;
         totalReduction += dmg;
+        if(turns == 0) this.turns = this.turnLim;
+        this.turns += turns;
 
     }
 }

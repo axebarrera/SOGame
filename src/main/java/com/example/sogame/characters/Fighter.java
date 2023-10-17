@@ -44,6 +44,9 @@ public class Fighter {
     public boolean undying;
     public boolean taunted;
     public boolean silenced;
+
+    public boolean bloodLinked;
+    public Fighter bloodBuddy;
     public String charModel;
     public String charUI;
 
@@ -87,6 +90,8 @@ public class Fighter {
         untargetable = false;
         taunted = false;
         silenced = false;
+        bloodLinked = false;
+        bloodBuddy = null;
     }
 
     public String getModel(){return charModel;}
@@ -94,6 +99,10 @@ public class Fighter {
 
     public void setSFC(StageFightController SFC){
         this.sfc = SFC;
+    }
+
+    public StageFightController getSFC(){
+        return sfc;
     }
 
     protected ArrayList<Moves> generateMoves(String filePath){
@@ -243,6 +252,18 @@ public class Fighter {
         }
     }
 
+    public void addStatusEffect(StatusEffect effect){
+        int id = effect.getId();
+        for(StatusEffect e : effects){
+            if(e.isSameEffect(id)){
+                e.enhanceEffect(0,0,0,this);
+                return;
+            }
+        }
+        effects.add(effect);
+        effect.initialEffect(this);
+    }
+
     public void deleteStatusEffect(int id){
         for(int i=0;i<effects.size();i++){
             if(effects.get(i).isSameEffect(id)) effects.remove(i);
@@ -277,6 +298,9 @@ public class Fighter {
         //Verify Ultimate
         if(m.isUlt && !ultimateAvailable()) return false;
 
+        //Verify BloodLink
+        if(m.containsEffect(37) && this.bloodLinked) return false;
+
         return true;
     }
 
@@ -303,6 +327,10 @@ public class Fighter {
         return "ERROR: invalidMoveErrorMessage and verifyChosenMove differ outputs";
     }
 
+    /**
+     * For Status Resistances in the future:
+     * Create Hashmap that contains current status resistance as val and effect id as key
+     */
     @Override
     public String toString(){
         return name;

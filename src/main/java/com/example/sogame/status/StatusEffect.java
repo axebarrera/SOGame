@@ -6,6 +6,8 @@ import javafx.scene.image.Image;
 public class StatusEffect {
     protected int turns;
 
+    protected int turnLim;
+
     protected EffectSection section; //0:beginning of turn, 1:end of turn, 2:On Attack
 
     protected EffectSection originalSection;
@@ -20,6 +22,7 @@ public class StatusEffect {
 
     public StatusEffect(int turnLim, EffectSection section, int id, boolean stasisAffected, boolean isPositive,String icon) {
         this.turns = turnLim;
+        this.turnLim = turnLim;
         this.section=section;
         killed=false;
         this.id = id;
@@ -37,7 +40,7 @@ public class StatusEffect {
     }
 
     public void enhanceEffect(int dmg,int turns,int chance){
-        return;
+        System.out.println("ERROR Not Overriding Enhance Effect!");
     }
 
     public void enhanceEffect(int dmg,int turns,int chance,Fighter fighter) {
@@ -68,5 +71,9 @@ public class StatusEffect {
 
     public int getTurns(){
         return turns;
+    }
+
+    public int getId() {
+        return id;
     }
 }

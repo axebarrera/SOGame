@@ -74,6 +74,7 @@ public class StageFightController implements SceneSwitcher{
     Font moveFont = new Font(30);
     Random numGenerator = new Random();
 
+    public Fighter currF;
     public int lastMoveID;
     public ArrayList<Fighter> lastMoveTargets = new ArrayList<>();
     public int turnType;//0=Items,1=Attacks,2=Tactics
@@ -161,7 +162,7 @@ public class StageFightController implements SceneSwitcher{
 
     //Basic, Abilities, and Ultimates Menus should call this function with appropriate parameters
     public void enterGeneralMenu(String title, int beginning, int end){
-        Fighter f = fighters[turnOrder[currTurn]];
+        Fighter f = currF;
         generalMovesUITitle.setText(title);
         generateListOfMoves(generalMovesUIVbox,f.attacks,beginning,end);
         attackUIPane.setVisible(false);
@@ -183,7 +184,7 @@ public class StageFightController implements SceneSwitcher{
 
     public void chooseMove(int id){
 
-        Fighter f  = fighters[turnOrder[currTurn]];
+        Fighter f  = currF;
         if(f.verifyChosenMove(id)) {
             if (!fighters[0].untargetable) char1.setDisable(false);
             if (!fighters[1].untargetable) char2.setDisable(false);
@@ -238,7 +239,7 @@ public class StageFightController implements SceneSwitcher{
         selectionUIExit.setVisible(false);
 
         //Get Basic Objects
-        Fighter caster = fighters[turnOrder[currTurn]];
+        Fighter caster = currF;
         Moves move = caster.attacks.get(lastMoveID);
         //Drain Resources from caster
         caster.modifyUlt(move.resource[0]);
@@ -253,8 +254,7 @@ public class StageFightController implements SceneSwitcher{
         for(int i=0;i<move.effects.size();i++){
             if(move.effectToSelf[i] && getPercentageResult(move.chanceOfEffectApplying[i])){
                 StatusEffect effect = AssignEffects.createEffect(move.effects.get(i));
-                caster.effects.add(effect);
-                effect.initialEffect(caster);//Initiate Effects
+                caster.addStatusEffect(effect);
             }
         }
         //Check if fighter is able to attack
@@ -264,12 +264,13 @@ public class StageFightController implements SceneSwitcher{
             for(int i=lastMoveTargets.size()-1;i>=0;i--){
                 //Get current target
                 Fighter t = lastMoveTargets.get(i);
-                //Check if attack hits this target
-                if(getPercentageResult(100-t.bonusDodgeChance)){
+                //Check if attack hits this target or (if they are teammates, attack always hits)
+                if(getPercentageResult(100-t.bonusDodgeChance) || caster == t.teammate){
                     //Activate all on attack effects
                     caster.executeStatusEffects(EffectSection.ONATTACK);
                     //Get damage that occurs on target
                     int currentDamage = calculateDamageOfMove(t,caster,move);
+
 
                     if(!skipApplicationStep) {
                         //Check which effects land
@@ -277,8 +278,7 @@ public class StageFightController implements SceneSwitcher{
                             if (!move.effectToSelf[i] && getPercentageResult(move.chanceOfEffectApplying[i] +
                                     caster.effectApplyModifier - t.effectDodgeModifier)) {
                                 StatusEffect e = AssignEffects.createEffect(move.effects.get(i));
-                                t.effects.add(e);
-                                e.initialEffect(t);
+                                t.addStatusEffect(e);
                             }
                         }
                         //Apply Damage
@@ -498,7 +498,8 @@ public class StageFightController implements SceneSwitcher{
     }
 
     public void setTurnName(){
-        turnNameText.setText(fighters[turnOrder[currTurn]].name);
+        currF = fighters[turnOrder[currTurn]];
+        turnNameText.setText(currF.name);
     }
 
     /** END UPDATE UI VALUES */
