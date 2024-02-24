@@ -80,6 +80,11 @@ public class StageFightController implements SceneSwitcher{
     public int totalDamageDone;
     public boolean skipApplicationStep = false;
 
+    /** New Setup **/
+
+
+    /** End New Setup **/
+
 
     /** Initialization */
     @Override
@@ -118,15 +123,15 @@ public class StageFightController implements SceneSwitcher{
 
     public void attackUIInit(){
         attackUIExit.setOnMouseClicked(event->exitAttackMenu());
-        attackUIBasic.setOnMouseClicked(event->enterGeneralMenu("BASIC",BEGINBASIC,ENDBASIC));
-        attackUIAbilities.setOnMouseClicked(event->enterGeneralMenu("ABILITIES",BEGINABILITIES,ENDABILITIES));
-        attackUIUltimates.setOnMouseClicked(event->enterGeneralMenu("ULTIMATES",BEGINULTIMATES,ENDULTIMATES));
-        generalMovesUIExit.setOnMouseClicked(event->exitGeneralMenu());
+        attackUIBasic.setOnMouseClicked(event-> enterAttackGeneralMenu("BASIC",BEGINBASIC,ENDBASIC));
+        attackUIAbilities.setOnMouseClicked(event-> enterAttackGeneralMenu("ABILITIES",BEGINABILITIES,ENDABILITIES));
+        attackUIUltimates.setOnMouseClicked(event-> enterAttackGeneralMenu("ULTIMATES",BEGINULTIMATES,ENDULTIMATES));
+        generalMovesUIExit.setOnMouseClicked(event-> exitAttackGeneralMenu());
     }
 
-    public void startGame(){
-        this.turnOrder = application.turnOrder;
-        this.fighters = application.fighters;
+    public void startGame(int[] turnOrder, Fighter[] fighters){
+        this.turnOrder = turnOrder;
+        this.fighters = fighters;
         //Generate Models and UI
         setModelsAndUI();
 
@@ -160,7 +165,7 @@ public class StageFightController implements SceneSwitcher{
     }
 
     //Basic, Abilities, and Ultimates Menus should call this function with appropriate parameters
-    public void enterGeneralMenu(String title, int beginning, int end){
+    public void enterAttackGeneralMenu(String title, int beginning, int end){
         Fighter f = fighters[turnOrder[currTurn]];
         generalMovesUITitle.setText(title);
         generateListOfMoves(generalMovesUIVbox,f.attacks,beginning,end);
@@ -170,7 +175,7 @@ public class StageFightController implements SceneSwitcher{
         descriptionUIPane.setVisible(true);
     }
 
-    public void exitGeneralMenu(){
+    public void exitAttackGeneralMenu(){
         //Will use Turn Type to determine which menu to make visible
         attackUIPane.setVisible(true);
 
@@ -476,9 +481,6 @@ public class StageFightController implements SceneSwitcher{
         fighters[1].teammate = fighters[0];
         fighters[2].teammate = fighters[3];
         fighters[3].teammate = fighters[2];
-        for(int i=0;i<4;i++){
-            fighters[i].setSFC(this);
-        }
     }
 
     public void clearMouseEvents(){

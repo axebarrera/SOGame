@@ -48,8 +48,6 @@ public class Fighter {
     public ArrayList<Moves> attacks;
     public boolean isDead;
 
-    StageFightController sfc;
-
     //TODO: Update Fighter Moves Text Files
 
     public Fighter(String name,int hp, int sp, int defense, int special, String charUI, String charModel) {
@@ -88,10 +86,6 @@ public class Fighter {
 
     public String getModel(){return charModel;}
     public String getUI(){return charUI;}
-
-    public void setSFC(StageFightController SFC){
-        this.sfc = SFC;
-    }
 
     protected ArrayList<Moves> generateMoves(String filePath){
         ArrayList<Moves> list = new ArrayList<>();

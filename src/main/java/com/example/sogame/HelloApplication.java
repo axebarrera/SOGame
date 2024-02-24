@@ -42,7 +42,7 @@ public class HelloApplication extends Application {
         stage.setTitle("Shattered Oath");
         stage.setScene(scene);
         stage.show();
-        controller.startGame();
+        controller.startGame(turnOrder,fighters);
     }
 
     public static void main(String[] args) {
