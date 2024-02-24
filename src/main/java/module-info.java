@@ -11,4 +11,6 @@ module com.example.sogame {
     opens com.example.sogame.characters to javafx.fxml;
     exports com.example.sogame.effectStatusClasses;
     opens com.example.sogame.effectStatusClasses to javafx.fxml;
+    exports com.example.sogame.mechanism;
+    opens com.example.sogame.mechanism to javafx.fxml;
 }

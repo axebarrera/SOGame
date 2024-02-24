@@ -1,6 +1,6 @@
 package com.example.sogame.characters;
 
-import com.example.sogame.moves.Moves;
+import com.example.sogame.mechanism.Fighter;
 
 import java.util.ArrayList;
 

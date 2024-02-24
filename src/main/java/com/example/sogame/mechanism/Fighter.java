@@ -1,18 +1,15 @@
-package com.example.sogame.characters;
+package com.example.sogame.mechanism;
 
 import com.example.sogame.StageFightController;
 import com.example.sogame.moves.Moves;
 import com.example.sogame.moves.TargetType;
 import com.example.sogame.status.EffectSection;
 import com.example.sogame.status.StatusEffect;
-import javafx.fxml.FXML;
-import javafx.scene.image.Image;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Fighter {
     public String name; //name of fighter

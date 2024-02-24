@@ -1,5 +1,7 @@
 package com.example.sogame.characters;
 
+import com.example.sogame.mechanism.Fighter;
+
 import java.util.ArrayList;
 
 public class Jomedy extends Fighter {

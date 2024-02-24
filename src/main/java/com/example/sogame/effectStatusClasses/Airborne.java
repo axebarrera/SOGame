@@ -1,9 +1,8 @@
 package com.example.sogame.effectStatusClasses;
 
-import com.example.sogame.characters.Fighter;
+import com.example.sogame.mechanism.Fighter;
 import com.example.sogame.status.EffectSection;
 import com.example.sogame.status.StatusEffect;
-import javafx.scene.image.Image;
 
 public class Airborne extends StatusEffect {
 

@@ -1,6 +1,6 @@
 package com.example.sogame;
 
-import com.example.sogame.characters.Fighter;
+import com.example.sogame.mechanism.Fighter;
 import com.example.sogame.moves.Moves;
 import com.example.sogame.moves.TargetType;
 import com.example.sogame.status.AssignEffects;

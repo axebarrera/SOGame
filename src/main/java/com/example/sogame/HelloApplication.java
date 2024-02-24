@@ -1,6 +1,7 @@
 package com.example.sogame;
 
 import com.example.sogame.characters.*;
+import com.example.sogame.mechanism.Fighter;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

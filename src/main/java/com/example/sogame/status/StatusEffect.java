@@ -1,7 +1,6 @@
 package com.example.sogame.status;
 
-import com.example.sogame.characters.Fighter;
-import javafx.scene.image.Image;
+import com.example.sogame.mechanism.Fighter;
 
 public class StatusEffect {
     protected int turns;
